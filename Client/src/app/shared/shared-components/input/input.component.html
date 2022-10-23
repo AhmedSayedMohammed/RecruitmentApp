@@ -1,0 +1,10 @@
+<span class="p-float-label p-input-icon-right w-full ">
+<input [type]="type"  [id]="id" [formControl]="control" autocomplete="off" pInputText class=" pr-0 py-2 w-full ui-state-filled">
+<label [for]="for">{{label}} <span class="text-red-500" *ngIf="isRequired">*</span></label>
+</span>
+<ng-container *ngIf="control.errors && (getField()?.touched || getField()?.dirty)">
+  <p *ngIf="getErrors('email')" class="pl-1  text-red-500 pt-2">Enter a valid email.</p>
+  <p *ngIf="getErrors('required')" class="pl-1 text-red-500 pt-2">{{label}} is required.</p>
+  <p *ngIf="getErrors('pattern')" class="pl-1 text-red-500 pt-2">Invalid pattern.</p>
+</ng-container>
+

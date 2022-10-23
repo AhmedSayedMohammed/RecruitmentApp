@@ -33,7 +33,7 @@ namespace RecruitmentApp.Controllers
 
         // GET: api/Vacancies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Vacancy>> GetVacancy(int id)
+        public async Task<ActionResult> GetVacancy(int id)
         {
             var vacancy = await _context.Vacancies.FindAsync(id);
 
@@ -42,7 +42,7 @@ namespace RecruitmentApp.Controllers
                 return NotFound();
             }
 
-            return vacancy;
+            return Ok(new Shared.Wrapper.Response<Vacancy>(vacancy, vacancy.Name));
         }
 
         // PUT: api/Vacancies/5

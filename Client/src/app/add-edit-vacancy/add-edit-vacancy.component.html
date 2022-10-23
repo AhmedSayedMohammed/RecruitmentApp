@@ -1,0 +1,19 @@
+<form [formGroup]="appForm" class="input-group mb-3" >
+              
+    <div class="mb-3 mt-3">
+        <label for="name" class="form-label">Name: </label>
+        <input id="name" type="text" formControlName="name" class="form-control mt-1" [value]="vacancy$.name" required>
+        <label for="email" class="form-label">responsibilities: </label>
+        <input id="email" type="text" formControlName="email" class="form-control mt-1" [value]="vacancy$.responsibilities"  required>
+        <label for="mobile" class="form-label">Responsibilities: </label>
+        <input id="mobile" type="text" formControlName="responsibilities" class="form-control" [value]="vacancy$.skills"  required>
+        <label for="mobile" class="form-label">jobCategory: </label>
+        <input id="mobile" type="text" formControlName="jobCategory" class="form-control" [value]="vacancy$.jobCategory"  required>
+        <button
+        pButton
+        pRipple
+        (click)="editvacancy(appForm)"
+        type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+    </div>
+  
+  </form>

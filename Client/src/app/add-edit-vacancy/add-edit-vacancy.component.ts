@@ -1,40 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../main.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { IJobApplication } from '../shared/classes/jobApplication';
 import { MessageService } from 'primeng/api';
+import { MainService } from '../main.service';
 import { IVacancy } from '../shared/wrapper/ivacancy';
 
 @Component({
-  selector: 'app-vacancy',
-  templateUrl: './job-application.component.html',
-  styleUrls: ['./job-application.component.css']
+  selector: 'app-add-edit-vacancy',
+  templateUrl: './add-edit-vacancy.component.html',
+  styleUrls: ['./add-edit-vacancy.component.css']
 })
-
-export class JobApplicationComponent implements OnInit {
+export class AddEditVacancyComponent implements OnInit {
+  id!:any
   vacancy$:IVacancy= {} as IVacancy
-  jobApp: IJobApplication = {} as IJobApplication;
-  id:any
-   jobForm = new FormGroup({
+ appForm = new FormGroup({
     name: new FormControl(''),
-    email: new FormControl(''),
-    mobile: new FormControl(''),
+    responsibilities: new FormControl(''),
+    jobCategory: new FormControl(''),
+    skills: new FormControl(''),
   });
-  constructor(private service:MainService,private route:ActivatedRoute,private messageService:MessageService) 
-  {
- 
-  }
-  applyVacancy(form:FormGroup){
+  constructor(private service:MainService,private route:ActivatedRoute,private messageService:MessageService) { }
+  editvacancy(form:FormGroup){
     this.id = this.route.snapshot.paramMap.get('id');
-    this.jobApp.email=form.value.email
-    this.jobApp.mobile=form.value.mobile
-    this.jobApp.name=form.value.name
-    this.jobApp.vacancyId=this.id
+    this.vacancy$.name=form.value.name
+    this.vacancy$.skills=form.value.skills
+    this.vacancy$.responsibilities=form.value.responsibilities
+    this.vacancy$.jobCategory=form.value.jobCategory
     console.log(this.id)
     console.log(form.value)
   
-   this.service.applyVacancy(this.jobApp).subscribe({
+   this.service.editVacancy(this.vacancy$).subscribe({
     next: (res) => {
 
       console.log(res)  
@@ -74,5 +69,4 @@ export class JobApplicationComponent implements OnInit {
       },
     });
   }
-
 }

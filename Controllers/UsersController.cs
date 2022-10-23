@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecruitmentApp.Data;
 using RecruitmentApp.Models;
+using RecruitmentApp.Shared.Wrapper;
 
 namespace RecruitmentApp.Controllers
 {
@@ -21,6 +24,22 @@ namespace RecruitmentApp.Controllers
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
+        }
+        [AllowAnonymous]
+        [HttpPost("{email}/{password}")]
+        public async Task<ActionResult> Login(string email, string password)
+        {
+            try
+            {
+                var User = _context.Users.Where(x => x.Email == email && x.Password == password && x.IsAdmin).First();
+                return Ok(new Response<User>(User, User.Email, "Logged In"));
+            }
+            catch (Exception)
+            {
+                throw new ValidationException("Wrong email or password");
+            }
+
+
         }
 
         // GET: api/Users/5

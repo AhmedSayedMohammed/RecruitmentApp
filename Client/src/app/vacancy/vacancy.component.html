@@ -60,7 +60,17 @@
           <td>  {{ vacancy.skills }}</td>
           <td>{{ vacancy.responsibilities }}</td>
           <td>{{ vacancy.jobCategory }}</td>
-      
+         <nav *ngIf="admin">
+          <button 
+          pButton
+          pRipple
+          icon="pi p-confirmDialog"
+          label="Edit"
+          class="p-button-rounded p-button-success mr-1 mb-1"
+          [routerLink]="['form/vacancy/edit',vacancy.id]" [state]="vacancy">
+          </button>
+         </nav>
+         <nav *ngIf="!admin">
           <td>
             <button 
             pButton
@@ -68,11 +78,11 @@
             icon="pi p-confirmDialog"
             label="Apply"
             class="p-button-rounded p-button-success mr-1 mb-1"
-            [routerLink]="['form/job',vacancy.id]"
-            type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            [routerLink]="['/form/job',vacancy.id]" [state]="vacancy">
             </button>
     
           </td>
+        </nav>
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">

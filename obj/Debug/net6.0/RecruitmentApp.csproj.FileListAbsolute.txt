@@ -275,12 +275,6 @@ E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Flue
 E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\AutoMapper.dll
 E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\recruitment_frontend\angular.json
-E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\recruitment_frontend\package-lock.json
-E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\recruitment_frontend\package.json
-E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\recruitment_frontend\tsconfig.app.json
-E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\recruitment_frontend\tsconfig.json
-E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\recruitment_frontend\tsconfig.spec.json
 E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\angular.json
 E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\package-lock.json
 E:\Companies\Interviews\linkdev\recruitment\RecruitmentApp\bin\Debug\net6.0\Client\package.json

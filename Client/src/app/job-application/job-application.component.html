@@ -1,3 +1,13 @@
+<p-messages></p-messages>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{vacancy$.name}}</h5>
+    <p class="card-text">{{vacancy$.skills}}</p>
+    <p class="card-text">{{vacancy$.responsibilities}}</p>
+    <p class="card-text">{{vacancy$.jobCategory}}</p>
+    <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Apply Now</button>
+  </div>
+</div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

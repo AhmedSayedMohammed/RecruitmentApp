@@ -11,6 +11,6 @@ visual studio
 .net core 
 sql server
 # frontend
-to run frontenf navigate to CLient folder and open it in VScode then in terminal excute ng serve --open
+to run frontend navigate to CLient folder and open it in VScode then in terminal excute ng serve --open
 # backend 
 open the application using visual studio then run to open swagger api 

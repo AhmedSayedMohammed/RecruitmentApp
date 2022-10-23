@@ -1,0 +1,36 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add your Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="jobForm" class="input-group mb-3" >
+              
+              <div class="mb-3 mt-3">
+                  <label for="name" class="form-label">Name: </label>
+                  <input id="name" type="text" formControlName="name" class="form-control mt-1" required>
+                  <label for="email" class="form-label">Email: </label>
+                  <input id="email" type="text" formControlName="email" class="form-control mt-1" required>
+                  <label for="mobile" class="form-label">Mobile: </label>
+                  <input id="mobile" type="text" formControlName="mobile" class="form-control" required>
+              </div>
+            
+            </form>
+      </div>
+
+
+      <div class="modal-footer">
+        <button
+        type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button
+        pButton
+        pRipple
+        (click)="applyVacancy(jobForm)"
+        type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

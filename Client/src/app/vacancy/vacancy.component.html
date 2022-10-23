@@ -1,0 +1,86 @@
+<p-toast></p-toast>
+<p-card>
+  <div class="shadow-1">
+
+      <ng-template pTemplate="left">
+      </ng-template>
+
+    <p-table
+      #dt
+      [value]="vacancies"
+       selectionMode="single"
+      [rows]="3"
+      [paginator]="true"
+      responsiveLayout="scroll"
+      dataKey="id"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [showCurrentPageReport]="true"
+      [selectAll]="false"
+      [pSelectableRow]="false"
+      
+    >
+      <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+          <h5 class="m-0">vacancies</h5>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 3rem">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          <th pSortableColumn="vacancy.name">
+            Name <p-sortIcon field="vacancy.name" aria-required="true"></p-sortIcon>
+          </th>
+          <th pSortableColumn="vacancy.skills">
+            Skills
+            <p-sortIcon field="vacancy.skills"></p-sortIcon>
+          </th>
+          <th pSortableColumn="vacancy.responsibilities">
+            Responsibilities
+            <p-sortIcon
+              field="vacancy.responsibilities"
+            ></p-sortIcon>
+          </th>
+          <th pSortableColumn="vacancy.jobCategory">
+            JobCategory
+            <p-sortIcon field="vacancy.jobCategory"></p-sortIcon>
+          </th>
+ 
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-vacancy>
+        <tr>
+          <td>
+            {{vacancy.id}}
+          </td>
+
+          <td>{{ vacancy.name }}</td>
+          <td>  {{ vacancy.skills }}</td>
+          <td>{{ vacancy.responsibilities }}</td>
+          <td>{{ vacancy.jobCategory }}</td>
+      
+          <td>
+            <button 
+            pButton
+            pRipple
+            icon="pi p-confirmDialog"
+            label="Apply"
+            class="p-button-rounded p-button-success mr-1 mb-1"
+            [routerLink]="['form/job',vacancy.id]"
+            type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            </button>
+    
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+          In total there are {{ vacancies ? vacancies.length : 0 }} vacancies.
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</p-card>
+<p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>

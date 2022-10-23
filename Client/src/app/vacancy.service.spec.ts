@@ -1,14 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { VacancyService } from './main.service';
+import { MainService } from './main.service';
 
-describe('VacancyService', () => {
-  let service: VacancyService;
+describe('MainService', () => {
+  let service: MainService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(VacancyService);
+    service = TestBed.inject(MainService);
   });
+
 
   it('should be created', () => {
     expect(service).toBeTruthy();

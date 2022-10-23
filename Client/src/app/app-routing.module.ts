@@ -7,6 +7,7 @@ import { VacancyComponent } from './vacancy/vacancy.component';
 
 
 const routes: Routes = [
+  
   {path:'form/job/:id', component:JobApplicationComponent},
   {path:'admin', component:LoginComponent},
   {path:'vacancies', component:VacancyComponent},
